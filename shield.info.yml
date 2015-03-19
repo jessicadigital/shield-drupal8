@@ -1,5 +1,5 @@
 name: Shield
-description: Shield HTTP authorisation.
+description: Shield HTTP authorization.
 type: module
 version: 0.1
 core: 8.x
