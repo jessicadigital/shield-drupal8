@@ -15,6 +15,14 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Configure http access for this site.
  */
 class ShieldForm extends ConfigFormBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getEditableConfigNames() {
+    return ['shield.config'];
+  }
+
   /**
    * {@inheritdoc}
    */
