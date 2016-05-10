@@ -29,6 +29,20 @@ class ShieldSubscriber implements EventSubscriberInterface {
       return;
     }
 
+    // get whitelisted urls
+    $whitelisted = explode("\n",$config->get('whitelisted'));
+    $whitelisted = array_map('trim', $whitelisted);
+    $whitelisted = array_filter($whitelisted);
+
+    // get current path and alias
+    $current_path = \Drupal::service('path.current')->getPath();
+    $alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+
+    // Do nothing if current path or alias is whitelisted
+    if (in_array($current_path, $whitelisted) || in_array($alias, $whitelisted)) {
+      return;
+    }
+
     // Retrieve the user and pass from config.
     $user = $config->get('login');
     $pass = $config->get('password');

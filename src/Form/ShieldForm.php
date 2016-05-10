@@ -56,6 +56,11 @@ class ShieldForm extends ConfigFormBase {
       '#title' => 'message',
       '#default_value' => $config->get('message'),
     );
+    $form['whitelisted'] = array(
+      '#type' => 'textarea',
+      '#title' => 'Whitelisted routes (new line separated)',
+      '#default_value' => $config->get('whitelisted'),
+    );
 
     return parent::buildForm($form, $form_state);
   }
@@ -64,7 +69,7 @@ class ShieldForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $options = array('enabled', 'login', 'password', 'message');
+    $options = array('enabled', 'login', 'password', 'message', 'whitelisted');
 
     $config = $this->config('shield.config');
 
