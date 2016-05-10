@@ -1,0 +1,17 @@
+{
+  "name": "jessicadigital/shield-drupal8",
+  "description": "Drupal 8 module providing shield protection for development environments.",
+  "type": "drupal-module",
+  "homepage": "https://github.com/jessicadigital/shield-drupal8",
+  "authors": [
+    {
+      "name": "Jessica",
+      "email": "code@jessica.digital",
+      "homepage": "http://jessica.digital/",
+      "role": "Maintainer"
+    }
+  ],
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": { }
+}
